@@ -29,13 +29,29 @@ public final class R {
     }
     public static final class drawable {
         public static final int backgroundtxt=0x7f020000;
-        public static final int ic_launcher=0x7f020001;
+        public static final int empty=0x7f020001;
+        public static final int ic_launcher=0x7f020002;
+        public static final int o=0x7f020003;
+        public static final int x=0x7f020004;
     }
     public static final class id {
-        public static final int action_settings=0x7f0a0003;
+        public static final int action_settings=0x7f0a0010;
         public static final int endText=0x7f0a0002;
+        public static final int imageButton1=0x7f0a0005;
+        public static final int imageButton2=0x7f0a0006;
+        public static final int imageButton3=0x7f0a0007;
+        public static final int imageButton4=0x7f0a0009;
+        public static final int imageButton5=0x7f0a000a;
+        public static final int imageButton6=0x7f0a000b;
+        public static final int imageButton7=0x7f0a000d;
+        public static final int imageButton8=0x7f0a000e;
+        public static final int imageButton9=0x7f0a000f;
+        public static final int resultText=0x7f0a0003;
         public static final int settingsText=0x7f0a0001;
         public static final int startText=0x7f0a0000;
+        public static final int tableRow1=0x7f0a0004;
+        public static final int tableRow2=0x7f0a0008;
+        public static final int tableRow3=0x7f0a000c;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -48,8 +64,8 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060001;
         public static final int app_name=0x7f060000;
+        public static final int draw=0x7f060006;
         public static final int end_game=0x7f060003;
-        public static final int hello_world=0x7f060006;
         public static final int pref_default_display_name=0x7f06000c;
         public static final int pref_description_social_recommendations=0x7f06000a;
         /**  Example settings for Data & Sync 

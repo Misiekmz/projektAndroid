@@ -7,6 +7,6 @@
     <string name="end_game">Wyjdź</string>
     <string name="settings">Ustawienia</string>
     <string name="title_activity_play">PlayActivity</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="draw">Remis</string>
 
 </resources>
