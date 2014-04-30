@@ -20,6 +20,28 @@
         android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />
     
+    <TextView 
+        android:id="@+id/activeO"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="3dp"
+        android:text="@string/activeO"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/activeX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/activeO"
+        android:layout_alignBottom="@+id/activeO"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/activeO"
+        android:text="@string/activeX"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+    
     <TableLayout
         android:layout_width="300dp"
         android:layout_height="300dp"
@@ -34,27 +56,28 @@
             android:layout_weight="1" >
             
             <ImageButton
-		        android:id="@+id/imageButton1"
-		        android:layout_marginRight="5dp"
-		        android:layout_marginBottom="5dp"
-		        android:layout_height="fill_parent"
-		        android:layout_weight="1"
-		        android:src="@drawable/empty"
-		        android:background="#fff" />
+                android:id="@+id/imageButton1"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="#fff" />
+
             <ImageButton
 		        android:id="@+id/imageButton2"
 		        android:layout_marginRight="5dp"
 		        android:layout_marginBottom="5dp"
-		        android:layout_height="fill_parent"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
 		        android:layout_weight="1"
-		        android:src="@drawable/empty"
 		        android:background="#fff" />
             <ImageButton
 		        android:id="@+id/imageButton3"
 		        android:layout_marginBottom="5dp"
-		        android:layout_height="fill_parent"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
 		        android:layout_weight="1"
-		        android:src="@drawable/empty"
 		        android:background="#fff" />
         </TableRow>
 
@@ -65,27 +88,28 @@
             android:layout_weight="1" >
             
             <ImageButton
-		        android:id="@+id/imageButton4"
-		        android:layout_marginRight="5dp"
-		        android:layout_marginBottom="5dp"
-		        android:layout_height="fill_parent"
-		        android:layout_weight="1"
-		        android:src="@drawable/empty"
-		        android:background="#fff" />
+                android:id="@+id/imageButton4"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="#fff" />
+
             <ImageButton
 		        android:id="@+id/imageButton5"
 		        android:layout_marginRight="5dp"
 		        android:layout_marginBottom="5dp"
-		        android:layout_height="fill_parent"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
 		        android:layout_weight="1"
-		        android:src="@drawable/empty"
 		        android:background="#fff" />
             <ImageButton
 		        android:id="@+id/imageButton6"
 		        android:layout_marginBottom="5dp"
-		        android:layout_height="fill_parent"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
 		        android:layout_weight="1"
-		        android:src="@drawable/empty"
 		        android:background="#fff" />
         </TableRow>
 
@@ -96,24 +120,25 @@
             android:layout_weight="1" >
             
             <ImageButton
-		        android:id="@+id/imageButton7"
-		        android:layout_marginRight="5dp"
-		        android:layout_height="fill_parent"
-		        android:layout_weight="1"
-		        android:src="@drawable/empty"
-		        android:background="#fff" />
+                android:id="@+id/imageButton7"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="#fff" />
+
             <ImageButton
 		        android:id="@+id/imageButton8"
 		        android:layout_marginRight="5dp"
-		        android:layout_height="fill_parent"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
 		        android:layout_weight="1"
-		        android:src="@drawable/empty"
 		        android:background="#fff" />
             <ImageButton
 		        android:id="@+id/imageButton9"
-		        android:layout_height="fill_parent"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
 		        android:layout_weight="1"
-		        android:src="@drawable/empty"
 		        android:background="#fff" />
         </TableRow>
 

@@ -8,5 +8,9 @@
     <string name="settings">Ustawienia</string>
     <string name="title_activity_play">PlayActivity</string>
     <string name="draw">Remis</string>
+    <string name="winX">Wygrał gracz X</string>
+    <string name="winO">Wygrał gracz O</string>
+    <string name="activeX">Gracz X</string>
+    <string name="activeO">Gracz O</string>
 
 </resources>
