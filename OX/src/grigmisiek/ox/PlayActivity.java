@@ -1,5 +1,6 @@
 package grigmisiek.ox;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.widget.GridLayout.LayoutParams;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.view.Menu;
@@ -28,6 +30,10 @@ public class PlayActivity extends Activity {
 	User user;
 	int lastPos;
 	boolean koniec;
+	MediaPlayer mpWin;
+	MediaPlayer mpButton;
+	MediaPlayer mpDraw;
+	boolean sound;
 	
 	GridLayout gl;
 	ImageButton[] button;
@@ -42,7 +48,11 @@ public class PlayActivity extends Activity {
 		
 		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 		String value = sharedPrefs.getString("prefGridSize", "");
+		sound = sharedPrefs.getBoolean("prefSound", true);
 		
+		mpWin = MediaPlayer.create(this, R.raw.win);
+		mpButton = MediaPlayer.create(this, R.raw.button);
+		mpDraw = MediaPlayer.create(this, R.raw.draw);
 		size = Integer.parseInt(value);
 		lastPos = -1;
 		user = User.X;
@@ -83,10 +93,17 @@ public class PlayActivity extends Activity {
 				
 				@Override
 				public void onClick(View v) {
-					if(koniec || button[pos].getTag() != null){
+					if (koniec) {
+						Intent intent = getIntent();
+						finish();
+						startActivity(intent);
+						return;
+					}
+					if(button[pos].getTag() != null){
 						return;
 					}
 					
+					if(sound) mpButton.start();
 					boolean winner = false;
 					if(user == User.X){
 						button[pos].setBackgroundResource(R.drawable.x);
@@ -97,6 +114,7 @@ public class PlayActivity extends Activity {
 						else
 							winner = isWinner5(user, pos);
 						if(winner){
+							if(sound) mpWin.start();
 							resultText.setText(R.string.winX);
 							koniec = true;
 							return;
@@ -113,6 +131,7 @@ public class PlayActivity extends Activity {
 						else
 							winner = isWinner5(user, pos);
 						if(winner){
+							if(sound) mpWin.start();
 							resultText.setText(R.string.winO);
 							koniec = true;
 							return;
@@ -122,8 +141,11 @@ public class PlayActivity extends Activity {
 						activeO.setVisibility(INVISIBLE);
 					}
 					
-					if(++licznik == size*size)
+					if(++licznik == size*size) {
+						if(sound) mpDraw.start();
 						resultText.setText(R.string.draw);
+						koniec = true;
+					}
 					
 					setLastPos(pos);
 				}

@@ -14,5 +14,6 @@
     <string name="activeX">Gracz X</string>
     <string name="activeO">Gracz O</string>
     <string name="pref_grid_size">Rozmiar planszy</string>
+    <string name="pref_sound">Dźwięk</string>
 
 </resources>
