@@ -34,6 +34,7 @@ public class PlayActivity extends Activity {
 	MediaPlayer mpButton;
 	MediaPlayer mpDraw;
 	boolean sound;
+	boolean undoPossible;
 	
 	GridLayout gl;
 	ImageButton[] button;
@@ -50,6 +51,7 @@ public class PlayActivity extends Activity {
 		String value = sharedPrefs.getString("prefGridSize", "");
 		sound = sharedPrefs.getBoolean("prefSound", true);
 		
+		undoPossible = false;
 		mpWin = MediaPlayer.create(this, R.raw.win);
 		mpButton = MediaPlayer.create(this, R.raw.button);
 		mpDraw = MediaPlayer.create(this, R.raw.draw);
@@ -146,7 +148,7 @@ public class PlayActivity extends Activity {
 						resultText.setText(R.string.draw);
 						koniec = true;
 					}
-					
+					undoPossible = true;
 					setLastPos(pos);
 				}
 			});
@@ -296,7 +298,7 @@ public class PlayActivity extends Activity {
 		int id = item.getItemId();
 		switch (id) {
 		case R.id.undo:
-			if (!koniec && lastPos != -1) {
+			if (!koniec && undoPossible) {
 				button[lastPos].setBackgroundColor(Color.WHITE);
 				button[lastPos].setTag(null);
 				if (user == User.X) {
@@ -309,9 +311,19 @@ public class PlayActivity extends Activity {
 					activeO.setVisibility(INVISIBLE);
 				}
 				licznik--;
+				undoPossible = false;
 			}
 			break;
 		}
+		return true;
+	}
+	
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+		if (koniec || !undoPossible)
+			menu.getItem(0).setEnabled(false);
+		else
+			menu.getItem(0).setEnabled(true);
 		return true;
 	}
 
